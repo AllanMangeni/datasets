@@ -3,10 +3,10 @@ annotations_creators:
 - expert-generated
 language_creators:
 - expert-generated
-languages:
+language:
 - en
-licenses:
-- other-for-non-commercial-research-and-educational-purposes-only
+license:
+- other
 multilinguality:
 - monolingual
 pretty_name: Multi-News
@@ -19,6 +19,19 @@ task_categories:
 task_ids:
 - news-articles-summarization
 paperswithcode_id: multi-news
+train-eval-index:
+- config: default
+  task: summarization
+  task_id: summarization
+  splits:
+    train_split: train
+    eval_split: test
+  col_mapping:
+    document: text
+    summary: target
+  metrics:
+    - type: rouge
+      name: Rouge
 ---
 
 # Dataset Card for Multi-News
